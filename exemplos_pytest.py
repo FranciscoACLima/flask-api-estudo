@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 # content of test_sample.py
-import pytest
+# Python
 import sys
+
+# Third
+import pytest
 
 
 def func(x):

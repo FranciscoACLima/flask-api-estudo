@@ -3,6 +3,7 @@
 # Python
 from os.path import dirname, isfile, join
 
+# Third
 import pytest
 from dotenv import load_dotenv
 
@@ -19,7 +20,9 @@ if isfile(_ENV_FILE):
 
 @pytest.fixture(scope='session')
 def client():
+    # Apps
     from apps import create_app
+
     # instancia nossa função factory criada anteriormente
     flask_app = create_app('testing')
 
@@ -38,3 +41,12 @@ def client():
 
     # remove o contexto ao terminar os testes
     ctx.pop()
+
+
+@pytest.fixture(scope='function')
+def mongo(request, client):
+
+    def fin():
+        print('\n[teardown] disconnect from db')
+
+    fin()

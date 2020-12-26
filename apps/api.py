@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Importamos as classes API e Resource
+# Third
 from flask_restful import Api, Resource
 
 
